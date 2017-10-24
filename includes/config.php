@@ -4,7 +4,10 @@
   if(!defined('__CONFIG__')){
     exit('Error. You do not have a config file.');
   }
-  
+  //make sure Sessions are turned on
+  if(!isset($_SESSION)){
+    session_start();
+  }
   //Allow error report
   // error_reporting(-1);
   // ini_set('display_errors', 'on');

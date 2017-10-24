@@ -18,25 +18,25 @@
     	<div role="main" class="ui-content">
         <h2>Log in</h2>
         <form id="login-form">
-            <label for="login-email"
+            <label for="email"
                    class="ui-hidden-accessible">Email:</label>
             <input type="email"
                    data-clear-btn="false"
-                   name="login-email"
+                   name="email"
                    value=""
                    placeholder="Email"
                    required
-                   id="login-email">
-            <label for="login-password"
+                   id="email">
+            <label for="password"
                    class="ui-hidden-accessible">Password:</label>
             <input type="password"
                    data-clear-btn="false"
-                   name="login-password"
+                   name="password"
                    value=""
                    autocomplete="off"
                    placeholder="Password"
                    required
-                   id="login-password">
+                   id="password">
             <button class="ui-btn ui-corner-all">Button</button>
         </form>
       </div>

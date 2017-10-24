@@ -31,7 +31,7 @@
         $phone = filter_var($_POST['phone']);
         $email = filter_var($_POST['email']);
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $creditcard = password_hash($_POST['creditcard'], PASSWORD_DEFAULT);
+        $creditcard = filter_var($_POST['creditcard']);
         $user_type = 'customer';
 
         $addUser = $con->prepare("INSERT INTO users(first_name,last_name,
