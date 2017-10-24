@@ -13,7 +13,7 @@
       $email = Filter::String($_POST['email']);
       $password = $_POST['password'];
       //Make sure that the user doesn't enchant_broker_dict_exists
-      $findUser = $con->prepare("SELECT user_id, password FROM users WHERE email = LOWER(:email)  LIMIT 1");
+      $findUser = $con->prepare("SELECT user_id, password, user_type FROM users WHERE email = LOWER(:email)  LIMIT 1");
       $findUser->bindParam(':email', $email, PDO::PARAM_STR);
       $findUser->execute();
 
@@ -26,6 +26,7 @@
           //sign them in
           $return['redirect'] = './store.php';
           $_SESSION['user_id'] = $user_id;
+          $_SESSION['user_type'] = $user_type;
           $return['is_logged_in'] = true;
         }else{
           //User not authenticated

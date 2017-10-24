@@ -4,6 +4,7 @@
     //require the config
     require_once 'includes/config.php';
 
+    forceStore();
  ?>
 <!DOCTYPE html>
 <html>

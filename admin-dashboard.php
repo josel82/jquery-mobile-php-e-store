@@ -5,6 +5,7 @@
     require_once 'includes/config.php';
 
     checkIfUserIsLoggedIn();
+    checkUserType();
  ?>
 
 <!DOCTYPE html>
