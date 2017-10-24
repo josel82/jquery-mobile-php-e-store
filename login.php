@@ -17,7 +17,7 @@
       </div>
     	<div role="main" class="ui-content">
         <h2>Log in</h2>
-        <form>
+        <form id="login-form">
             <label for="login-email"
                    class="ui-hidden-accessible">Email:</label>
             <input type="email"
@@ -43,6 +43,8 @@
     	<div data-role="footer" data-position="fixed">
     	  <p>Footer here</p>
     	</div>
+      <!-- Popup -->
+      <div data-role="popup" id="popup-msg" class="ui-content"></div>
     </div>
 
     <?php require_once 'includes/bottom-jsfiles.php';?>

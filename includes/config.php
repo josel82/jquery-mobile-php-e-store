@@ -5,4 +5,7 @@
     exit('Error. You do not have a config file.');
   }
 
+  include_once 'classes/db.php';
+
+  $con = Database::getConnection();
  ?>
