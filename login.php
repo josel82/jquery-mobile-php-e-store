@@ -44,7 +44,7 @@
     	  <p>Footer here</p>
     	</div>
       <!-- Popup -->
-      <div data-role="popup" id="popup-msg" class="ui-content"></div>
+      <div data-role="popup" class="ui-content popup-msg"></div>
     </div>
 
     <?php require_once 'includes/bottom-jsfiles.php';?>

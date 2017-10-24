@@ -17,56 +17,56 @@
       </div>
     	<div role="main" class="ui-content">
         <h2>Register</h2>
-        <form>
+        <form id="register-form">
             <!--Firstname block-->
-            <label for="firstname"
+            <label for="first_name"
                    class="ui-hidden-accessible">firstname:</label>
             <input type="text"
                    data-clear-btn="false"
-                   name="firstname"
+                   name="firs_tname"
                    value=""
                    placeholder="Firstname"
                    required
-                   id="Firstname"> <!--End Firstname block-->
+                   id="Firs_tname"> <!--End Firstname block-->
             <!--Lastname block-->
-            <label for="lastname"
+            <label for="last_name"
                    class="ui-hidden-accessible">lastname:</label>
             <input type="text"
                    data-clear-btn="false"
-                   name="lastname"
+                   name="last_name"
                    value=""
                    placeholder="Lastname"
                    required
-                   id="Lastname"> <!--End Lastname block-->
+                   id="Last_name"> <!--End Lastname block-->
             <!--Email block-->
-            <label for="reg-email"
+            <label for="email"
                    class="ui-hidden-accessible">Email:</label>
             <input type="email"
                    data-clear-btn="false"
-                   name="reg-email"
+                   name="email"
                    value=""
                    placeholder="Email"
                    required
-                   id="reg-email"> <!--End Email block-->
+                   id="email"> <!--End Email block-->
             <!--Address 1 block-->
-            <label for="address1"
+            <label for="address_1"
                    class="ui-hidden-accessible">Address 2:</label>
             <input type="text"
                     data-clear-btn="false"
-                    name="address1"
+                    name="address_1"
                     value=""
                     placeholder="Address 1"
                     required
-                    id="address1"> <!--Address 1 block-->
+                    id="address1_"> <!--Address 1 block-->
             <!--Address 2 block-->
-            <label for="address2"
+            <label for="address_2"
                     class="ui-hidden-accessible">Address 2:</label>
             <input type="text"
                     data-clear-btn="false"
-                    name="address2"
+                    name="address_2"
                     value=""
                     placeholder="Address 2"
-                    id="address2"> <!--Address 2 block-->
+                    id="address_2"> <!--Address 2 block-->
             <!--City block-->
             <label for="city"
                     class="ui-hidden-accessible">City:</label>
@@ -88,15 +88,15 @@
                     required
                     id="country"> <!--Country block-->
             <!--Zip code block-->
-            <label for="zipcode"
+            <label for="zip_code"
                     class="ui-hidden-accessible">Zip code:</label>
             <input type="text"
                     data-clear-btn="false"
-                    name="zipcode"
+                    name="zip_code"
                     value=""
                     placeholder="Zip code"
                     required
-                    id="zipcode"> <!--Zip code block-->
+                    id="zip_code"> <!--Zip code block-->
             <!--Phone block-->
             <label for="phone"
                     class="ui-hidden-accessible">Phone:</label>
@@ -108,27 +108,27 @@
                     required
                     id="phone"> <!--Phone block-->
             <!--Password block-->
-            <label for="reg-password"
+            <label for="password"
                    class="ui-hidden-accessible">Password:</label>
             <input type="password"
                    data-clear-btn="false"
-                   name="reg-password"
+                   name="password"
                    value=""
                    autocomplete="off"
                    placeholder="Password"
                    required
-                   id="reg-password"><!--End password block-->
+                   id="password"><!--End password block-->
             <!--Confirm Password block-->
-            <label for="conf-password"
+            <label for="conf_password"
                     class="ui-hidden-accessible">Confirm Password:</label>
             <input type="password"
                     data-clear-btn="false"
-                    name="conf-password"
+                    name="conf_password"
                     value=""
                     autocomplete="off"
                     placeholder="Confirm Password"
                     required
-                    id="conf-password"><!--Confirm Password block-->
+                    id="conf_password"><!--Confirm Password block-->
 
             <!--Buttons-->
             <button class="ui-btn ui-corner-all">Register</button>
@@ -138,6 +138,7 @@
     	<div data-role="footer">
     	  <p>Footer here</p>
     	</div>
+      <div data-role="popup" class="ui-content popup-msg"></div>
     </div>
 
     <?php require_once 'includes/bottom-jsfiles.php';?>
