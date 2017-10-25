@@ -64,9 +64,8 @@
         $addUser->execute();
 
         $user_id = $con->lastInsertId();
-        $_SESSION['user_id'] = (int) $user_id;
         $return['redirect'] = './login.php?message=welcome';
-        $return['is_logged_in'] = true;
+        
         }
       //Make sure that the user can be added
 

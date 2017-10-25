@@ -1,3 +1,10 @@
 #warning{
   color: red;
 }
+
+.ui-listview .ui-li-has-thumb>img:first-child,
+.ui-listview .ui-li-has-thumb>.ui-btn>img:first-child,
+.ui-listview .ui-li-has-thumb .ui-li-thumb{
+  max-height: 6em;
+  max-width: 6em;
+}

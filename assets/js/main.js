@@ -1,4 +1,4 @@
-$(document).on("submit", "#register-form", function(e){
+$(document).on("submit", "#register-form", function(e){ //This will run when the register form gets submitted
   e.preventDefault();
 
   let _form = $(this);
@@ -16,7 +16,7 @@ $(document).on("submit", "#register-form", function(e){
     password: $("input[name='password']", _form).val(),
     conf_password: $("input[name='conf_password']", _form).val()
   };
-  console.log(dataObj);
+
   if(dataObj.email.length < 6){
     _error.text("Please enter a valid email.")
           .addClass("warning")
@@ -42,7 +42,7 @@ $(document).on("submit", "#register-form", function(e){
     async:true
   }).done(function(data){
     if(data.redirect !== undefined){
-      window.location = data.redirect;
+      $.mobile.changePage( data.redirect, { transition: "slide"} );
     }else if(data.error !== undefined){
       _error.text(data.error)
             .addClass("warning")
@@ -56,7 +56,7 @@ $(document).on("submit", "#register-form", function(e){
 
 
   return;
-})
+})//This will run when the login form gets submitted
 .on("submit", "#login-form", function(e){
   e.preventDefault();
 
@@ -87,7 +87,7 @@ $(document).on("submit", "#register-form", function(e){
     async:true
   }).done(function(data){
     if(data.redirect !== undefined){
-      window.location = data.redirect;
+      $.mobile.changePage( data.redirect, { transition: "slideup"} );
     }else if(data.error !== undefined){
       _error.html(data.error)
             .addClass("warning")
@@ -98,8 +98,47 @@ $(document).on("submit", "#register-form", function(e){
   }).always(function(data){
     console.log('always');
   });
-
   return;
+})//This will run when store.php gets initiated. The code below populate the listView dynamically
+.delegate("#store", "pageinit", function() {
+    getProducts('',
+    function(data){
+        let products = data.products;
+        $(".product-list").html('');
+        $.each(products, function(i, item){
+          $(".product-list").append(`
+            <li>
+              <a href="#product?id=${item.prod_id}">
+                <img src="${item.picture}" alt="">
+                <h2>${item.prod_name}</h2>
+                <p>${item.prod_desc}</p>
+                <small>Price: <strong>€${item.unit_price}</strong></small>
+              </a>
+            </li>
+            `).listview("refresh");
+        });
+      },
+      function(e){
+        console.log(e);
+      },
+      function(data){
+        console.log('always');
+      });
 });
+
+function getProducts(param, success, error, always){
+  $.ajax({
+    type:'GET',
+    url:`./ajax/products-ajax.php?${param}`,
+    dataType: 'json',
+    async:true
+  }).done(function(data){
+    success(data);
+  }).fail(function(e){
+    error(e);
+  }).always(function(data){
+    always('always');
+  });
+}
 
 //Note to myself. Do some research about Lets Encrypt

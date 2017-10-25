@@ -1,5 +1,5 @@
 <?php
-  // ob_start();
+  ob_start(); //<= This solved the issue
 	session_start();
 	session_destroy();
 	session_write_close();
